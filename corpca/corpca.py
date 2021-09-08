@@ -21,9 +21,13 @@ class CorPCA(_BasePCA):
         cormat = np.dot(X.T, X) / n
         lamb, vecs = np.linalg.eigh(cormat)
 
+        # sort by descending order
+        lamb = lamb[::-1]
+        vecs = vecs[:, ::-1]
+
         lamb = lamb[:self.n_components]
         # (d x n_compontns)
-        vecs = vecs[:self.n_components]
+        vecs = vecs[:, :self.n_components].T
 
         self.components_ = vecs
         self.explained_variance_ratio_ = lamb / lamb.sum()

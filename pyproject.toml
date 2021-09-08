@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "corpca"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Aiga SUZUKI <tochikuji@gmail.com>"]
 license = "MIT"
